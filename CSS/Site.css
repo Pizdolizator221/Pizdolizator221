@@ -1,23 +1,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Gotu&family=Open+Sans:wght@300;400&display=swap');
-
+body, h1, h2, h3, h4, h5, h6, a{
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
 :root
 {
+    --green: rgb(83, 148, 91);
     --red: rgb(206, 85, 85);
-    --orange: rgb(212, 105, 5);
-    --grey: rgb(78, 74, 74);
+    --grey: #4b4b4b;
+    --transparent: rgba(255, 255, 255, 0.192);
 }
 body{
     font-family: 'Open Sans', sans-serif;
     min-height: 100vh;
+    color: var(--grey);
 }
 .body-wrapper{
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
+    min-height: 100vh;
 }
-
-.navbar-brand{
-    font-family: 'Gotu', sans-serif;
-    font-weight: 700;
-    font-size: 25px;
+.site-header{
+    height: 300px;
+    display: flex;
+}
+.site-header_title{
+    margin: auto;
+    font-size: 125px;
+    color: black;
+}
+.site-nav{
+    height: 100px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    background-color: var(--green);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+.site-nav-container{
+    margin-left: auto;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.site-nav_link{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin: auto;
+    width: 100px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    transition: 0.35s all ease;
+}
+.site-nav_link::before, .site-nav_link::after{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: var(--transparent);
+    content: "";
+    transition: 0.35s all ease-in;
+    opacity: 0;
+    border-radius: 15px;
+}
+.site-nav_link::before{
+    left: 0;
+}
+.site-nav_link::after{
+    right: 0;
+}
+.site-nav_link__text{
+    color: white;
+    z-index: 100;
+    margin: auto;
+    letter-spacing: 2px;
+}
+.site-nav_link:hover{
+    width: 150px;
+    height: 60px;
+    border-radius: 15px;
+}
+.site-nav_link:hover::before, .site-nav_link:hover::after{
+    width: 100%;
+    opacity: 1;
+}
+.article{
+    margin-top: 100px;
+}
+.article_title{
+    font-size: 65px;
+    color: black;
+    text-align: center;
+}
+.article_title+hr{
+    margin-bottom: 70px;
+}
+.paragraph{
+    position: relative;
+}
+.paragraph_title{
+    color: black;
+    border-left: 4px solid var(--red);
+    font-size: 30px;
+    padding-left: 50px;
+    margin-bottom: 25px;
+}
+.paragraph_image{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    float: left;
+    margin-right: 25px;
 }
